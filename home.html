@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image Viewer</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <button class="barre" onclick="toggleToolbar()">
+        <i class="fa fa-arrow-right"></i> Barre d'outil
+      </button>
+
+      <div id="toolbar" style="display: none">
+        <button
+          id="prevImageBtn"
+          onclick="prevImage()"
+          class="previous"
+          title="image précendante"
+        >
+          <i class="fa fa-backward"> </i>
+        </button>
+        <button
+          id="autoplayBtn"
+          onclick="toggleAutoplay()"
+          class="play"
+          title="play"
+        >
+          <i class="fa fa-play"> </i>
+        </button>
+        <button
+          id="nextImageBtn"
+          onclick="nextImage()"
+          class="next"
+          title="image suivante"
+        >
+          <i class="fa fa-forward"> </i>
+        </button>
+        <button
+          id="switchToRandomBtn"
+          onclick="switchToRandomImage()"
+          class="random"
+          title="play aleatoire"
+        >
+          <i class="fa fa-random"> </i>
+        </button>
+      </div>
+      <div class="mainImageContainer">
+        <div class="main-image">
+          <img
+            src="images/1.jpg"
+            alt="Main Image"
+            id="mainImage"
+            height="500"
+            width="1000"
+          />
+        </div>
+        <p class="imgTxt" id="imageTitle">welcome 1</p>
+      </div>
+      <div class="thumbnails">
+        <button class="btn" id="prevBtn">
+          <i class="fa-solid fa-angles-left"></i> Page Précédente
+        </button>
+        <div class="thborder">
+          <img
+            src="images/1.jpg"
+            alt="Image 1"
+            class="thumbnail"
+            data-index="1"
+            onclick="displayMainImage(this.src , 'welcome')"
+          />
+          <img
+            src="images/2.jpg"
+            alt="Image 2"
+            class="thumbnail"
+            data-index="2"
+            onclick="displayMainImage(this.src, 'turkia')"
+          />
+          <img
+            src="images/3.jpg"
+            alt="Image 3"
+            class="thumbnail"
+            data-index="3"
+            onclick="displayMainImage(this.src, 'hello')"
+          />
+          <img
+            src="images/4.jpg"
+            alt="Image 4"
+            class="thumbnail"
+            data-index="4"
+            onclick="displayMainImage(this.src, 'green')"
+          />
+          <img
+            src="images/5.jpg"
+            alt="Image 5"
+            class="thumbnail"
+            data-index="5"
+            onclick="displayMainImage(this.src, 'hi')"
+          />
+          <img
+            src="images/6.jpg"
+            alt="Image 6"
+            class="thumbnail"
+            data-index="6"
+            onclick="displayMainImage(this.src, 'paris')"
+          />
+        </div>
+        <button class="btn" id="nextBtn">
+          Page Suivante <i class="fa-solid fa-angles-right"></i>
+        </button>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
